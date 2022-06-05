@@ -1,0 +1,24 @@
+.title {
+  @include font-El(42, 59);
+  color: $main-white;
+  margin: 0;
+  position: relative;
+  padding: 0 72px 20px;
+  width: max-content;
+  margin: 0 auto;
+
+  &::after,
+  &::before {
+    position: absolute;
+    content: url("../img/decor/decor-element-blue.svg");
+  }
+
+  &::after {
+    transform: rotate3d(0, 1, 0, 180deg);
+    right: 0;
+  }
+
+  &::before {
+    left: 0;
+  }
+}

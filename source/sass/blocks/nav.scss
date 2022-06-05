@@ -1,0 +1,22 @@
+.nav,
+.nav__wrapper {
+  display: flex;
+}
+
+.nav__list {
+  @include reset-list;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 655px;
+}
+
+.nav__item {
+
+  a {
+    @include font(14, 19, 400);
+    color: $main-white;
+    @include hover;
+  }
+}

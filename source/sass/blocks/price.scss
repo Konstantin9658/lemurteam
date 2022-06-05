@@ -1,0 +1,70 @@
+.price {
+  padding: 55px 0;
+}
+
+.price__wrapper {
+  display: flex;
+  max-width: 1116px;
+  padding: 0 20px;
+  margin: 79px auto 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price__list {
+  @include reset-list;
+  display: flex;
+  flex-direction: column;
+  width: 416px;
+  margin-right: 20px;
+}
+
+.price__item {
+  display: flex;
+  margin-bottom: 31px;
+  justify-content: space-between;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  p {
+    margin: 0;
+    color: $main-white;
+
+    &:last-child {
+      @include font-El(18, 25);
+    }
+  }
+}
+
+.price__descr {
+  position: relative;
+  @include font(18, 25, 400);
+  padding-left: 38px;
+  padding-right: 15px;
+  display: flex;
+  align-items: center;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 18px;
+    height: 9px;
+    background-image: url("../img/decor/decor-element-blue.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    left: 0;
+  }
+}
+
+.price__gift-card {
+  margin: 0;
+
+  figcaption {
+    @include font-El(21, 29);
+    color: $main-white;
+    text-align: center;
+    margin-top: 30px;
+  }
+}

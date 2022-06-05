@@ -1,0 +1,18 @@
+.page {
+  height: 100%;
+  scroll-behavior: smooth;
+  background-color: $mostly-black;
+  padding: 0 20px;
+}
+
+.page__body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  &--hidden {
+    overflow: hidden;
+  }
+}

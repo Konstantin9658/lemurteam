@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "Proxima Nova";
+  src: local("proxima-nova-light"),
+    url("../fonts/proxima-nova-light.woff2") format("woff2"),
+    url("../fonts/proxima-nova-light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: local("proxima-nova-regular"),
+    url("../fonts/proxima-nova-regular.woff2") format("woff2"),
+    url("../fonts/proxima-nova-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: local("proxima-nova-semibold"),
+    url("../fonts/proxima-nova-semibold.woff2") format("woff2"),
+    url("../fonts/montserrat-alternates-semibold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: local("proxima-nova-bold"),
+    url("../fonts/proxima-nova-bold.woff2") format("woff2"),
+    url("../fonts/proxima-nova-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "El Messiri";
+  src: local("el-messiri-bold"),
+    url("../fonts/el-messiri-bold.woff2") format("woff2"),
+    url("../fonts/el-messiri-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

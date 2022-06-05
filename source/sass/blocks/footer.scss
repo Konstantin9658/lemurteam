@@ -1,0 +1,27 @@
+.footer {
+  flex: 0 0 auto;
+  padding: 15px 0 30px;
+  position: relative;
+
+  &--border {
+    padding-top: 30px;
+    border-top: 1px solid $main-white;
+  }
+}
+
+.footer__wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  p {
+    margin: 0;
+    color: $main-white;
+    @include font(14, 19, 400);
+  }
+
+  a {
+    @include hover;
+    color: $main-white;
+    @include font(14, 19, 700);
+  }
+}

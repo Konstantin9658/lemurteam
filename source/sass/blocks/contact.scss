@@ -1,0 +1,62 @@
+.contact {
+  padding: 95px 0 75px;
+  display: flex;
+  justify-content: space-between;
+  min-height: 604px;
+
+  iframe {
+    border: none;
+    width: 856px;
+    border-radius: $radius10;
+    min-height: 604px;
+  }
+}
+
+.contact__map {
+  background-image: url("../img/bcg-map.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: $radius10;
+  max-width: 856px;
+  width: 100%;
+  height: 604px;
+}
+
+.contact__boxes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 20px;
+}
+
+.contact__box {
+  width: 392px;
+  min-height: 290px;
+  border-radius: $radius10;
+  background-color: $strong-blue;
+  padding: 35px 45px;
+
+  h3 {
+    @include font-El(24, 34);
+    padding-bottom: 20px;
+    margin: 0;
+    color: $main-white;
+  }
+}
+
+.contact__box-list {
+  @include reset-list;
+  margin-bottom: 29px;
+}
+
+.contact__box-item {
+  display: flex;
+  margin-bottom: 21px;
+
+  p {
+    margin: 0;
+    @include font(14, 19, 400);
+    color: $main-white;
+    padding-left: 20px;
+  }
+}

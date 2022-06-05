@@ -1,0 +1,41 @@
+.sessions {
+  padding: 75px 0 75px;
+}
+
+.sessions__list {
+  @include reset-list;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 24px;
+  margin-top: 79px;
+}
+
+.sessions__item {
+  max-width: 416px;
+  width: 100%;
+  min-height: 258px;
+  background: $gradient-sessions, url("../img/about-img.png") no-repeat center/cover;
+  border-radius: $radius10;
+  transition: $trans--300;
+  padding: 0 40px 30px;
+  display: flex;
+
+  a {
+    @include font-El(24, 34);
+    color: $main-white;
+    margin-top: auto;
+  }
+
+  &:first-child {
+    min-height: 540px;
+    grid-row-start: 1;
+    grid-row-end: -1;
+    border-bottom: 7px solid $strong-blue;
+  }
+
+  &:hover {
+    transition: $trans--300;
+    background: $gradient-sessions-hover, url("../img/about-img.png") no-repeat center/cover;
+  }
+}

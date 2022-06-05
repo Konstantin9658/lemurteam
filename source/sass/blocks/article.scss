@@ -1,0 +1,34 @@
+.article {
+  padding-top: 30px;
+}
+
+.article__wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 39px;
+  margin-bottom: 144px;
+}
+
+.article__content {
+  width: 556px;
+  min-height: 501px;
+  padding-right: 31px;
+  margin-right: auto;
+
+  h3,
+  p {
+    margin: 0;
+    color: $main-white;
+  }
+
+  h3 {
+    @include font-El(24, 34);
+    padding-top: 45px;
+    padding-bottom: 30px;
+  }
+
+  p {
+    @include font(16, 22, 300);
+    padding-bottom: 16px;
+  }
+}

@@ -1,0 +1,56 @@
+.intro {
+  padding: 20px 0 75px;
+}
+
+.intro__wrapper {
+  background-image: url("../img/intro-bcg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 600px;
+  padding: 36px 20px;
+  border-radius: $radius10;
+
+  @include retina {
+    background-image: url("../img/intro-bcg@2x.png");
+    background-size: cover;
+  }
+
+  p,
+  h1 {
+    margin: 0;
+    color: $main-white;
+    text-align: center;
+  }
+
+  h1 {
+    @include font-El(64, 90);
+  }
+
+  p {
+    @include font-El(24, 34);
+    position: relative;
+    padding: 0 106px 40px;
+
+    &::after,
+    &::before {
+      position: absolute;
+      content: url("../img/decor/decor-element-white.svg")
+    }
+
+    &::after {
+      right: 78px;
+      transform: rotate3d(0, 1, 0, 180deg);
+    }
+
+    &::before {
+      left: 80px;
+    }
+  }
+}
+
+.intro__inner {
+  width: 100%;
+  max-width: 587px;
+  margin: 100px auto;
+}

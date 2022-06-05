@@ -1,0 +1,20 @@
+@mixin font-El($size, $lh) {
+  font-family: $el;
+  font-size: $size + px;
+  line-height: $lh + px;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin font($size, $lh, $weight) {
+  font-family: $nova;
+  font-size: $size + px;
+  line-height: $lh + px;
+  font-weight: $weight;
+  font-style: normal;
+}
+
+@mixin resize-txt($size, $lh) {
+  font-size: $size + px;
+  line-height: $lh + px;
+}
