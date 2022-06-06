@@ -24,6 +24,10 @@
     min-height: 450px;
   }
 
+  @media (max-width: $mobile-width) {
+    padding-right: 0;
+  }
+
   h3,
   p {
     margin: 0;

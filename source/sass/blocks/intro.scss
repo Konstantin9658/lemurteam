@@ -1,5 +1,9 @@
 .intro {
   padding: 20px 0 75px;
+
+  @media (max-width: $mobile-width) {
+    padding-bottom: 35px;
+  }
 }
 
 .intro__wrapper {
@@ -16,6 +20,10 @@
   height: 600px;
   padding: 36px 20px;
   border-radius: $radius10;
+
+  @media (max-width: $mobile-width) {
+    height: 250px;
+  }
 
   @include retina {
     @supports not (background-image: url("../img/intro-bcg@2x.webp")) {
@@ -35,12 +43,21 @@
 
   h1 {
     @include font-El(64, 90);
+
+    @media (max-width: $mobile-width) {
+      @include resize-txt(36, 42);
+    }
   }
 
   p {
     @include font-El(24, 34);
     position: relative;
     padding: 0 106px 40px;
+
+    @media (max-width: $mobile-width) {
+      @include resize-txt(18, 24);
+      padding: 0 30px 25px;
+    }
 
     &::after,
     &::before {
@@ -51,10 +68,18 @@
     &::after {
       right: 78px;
       transform: rotate3d(0, 1, 0, 180deg);
+
+      @media (max-width: $mobile-width) {
+        right: 0;
+      }
     }
 
     &::before {
       left: 80px;
+
+      @media (max-width: $mobile-width) {
+        left: 0;
+      }
     }
   }
 }
@@ -63,4 +88,8 @@
   width: 100%;
   max-width: 587px;
   margin: 100px auto;
+
+  @media (max-width: $mobile-width) {
+    margin-top: 0;
+  }
 }

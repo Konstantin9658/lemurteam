@@ -4,6 +4,14 @@
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
+
+  @media (max-width: $tablet-width) {
+    max-width: 735px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding-top: 45px;
+  }
 }
 
 .feedback__list {
@@ -26,6 +34,11 @@
   opacity: 0.4;
   border-radius: $radius10;
   margin-bottom: 61px;
+
+  @media (max-width: $mobile-width) {
+    min-width: 300px;
+    padding: 30px 15px 36px;
+  }
 
   blockquote {
     margin: 0;
@@ -57,9 +70,19 @@
   min-height: 350px;
   padding: 50px 60px 56px;
 
+  @media (max-width: $mobile-width) {
+    min-width: 300px;
+    padding: 30px 15px 36px;
+  }
+
   .feedback__user {
     @include resize-txt(20, 28);
     padding-bottom: 20px;
+
+    @media (max-width: $mobile-width) {
+      @include resize-txt(16, 24);
+      padding-bottom: 15px;
+    }
   }
 
   blockquote p {

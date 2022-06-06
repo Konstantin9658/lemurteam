@@ -7,6 +7,11 @@
   width: max-content;
   margin: 0 auto;
 
+  @media (max-width: $mobile-width) {
+    padding: 0 40px 20px;
+    @include resize-txt(20, 28);
+  }
+
   &::after,
   &::before {
     position: absolute;

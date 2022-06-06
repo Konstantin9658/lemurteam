@@ -1,6 +1,6 @@
-.nav,
-.nav__wrapper {
+.nav {
   display: flex;
+  position: relative;
 }
 
 .nav__list {
@@ -8,11 +8,43 @@
   display: flex;
   flex-flow: row wrap;
   align-items: center;
-  justify-content: space-between;
   width: 655px;
+
+  @media (max-width: $tablet-width) {
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    width: 0;
+    height: 0;
+    left: 0;
+    top: 0;
+    background-color: $strong-blue;
+    z-index: 5;
+    visibility: hidden;
+    opacity: 0;
+
+    &--show {
+      opacity: 1;
+      transition: $trans--300;
+      visibility: visible;
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 
 .nav__item {
+  margin-right: 50px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @media (max-width: $tablet-width) {
+    margin-right: 0;
+  }
 
   a {
     @include font(14, 19, 400);

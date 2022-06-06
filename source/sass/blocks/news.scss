@@ -25,6 +25,7 @@
   min-height: 258px;
   padding: 30px 45px 30px 35px;
   cursor: pointer;
+  transition: $trans--300;
 
   @include retina {
 

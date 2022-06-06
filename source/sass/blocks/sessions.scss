@@ -1,5 +1,9 @@
 .sessions {
   padding: 75px 0 75px;
+
+  @media (max-width: $mobile-width) {
+    padding: 45px 0 45px;
+  }
 }
 
 .sessions__list {
@@ -13,6 +17,11 @@
   @media (max-width: $tablet-width) {
     margin-top: 40px;
   }
+
+  @media (max-width: $mobile-width) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
 }
 
 .sessions__item {
@@ -25,21 +34,33 @@
   padding: 0 40px 30px;
   display: flex;
 
+  @media (max-width: $mobile-width) {
+    padding: 0 25px 30px;
+  }
+
   a {
     @include font-El(24, 34);
     color: $main-white;
     margin-top: auto;
+
+    @media (max-width: $mobile-width) {
+      @include resize-txt(18, 28);
+    }
   }
 
   &:first-child {
     min-height: 540px;
     grid-row-start: 1;
     grid-row-end: -1;
-    border-bottom: 7px solid $strong-blue;
+
+    @media (max-width: $mobile-width) {
+      min-height: 258px;
+      grid-row: 1 / 1;
+    }
   }
 
   &:hover {
     transition: $trans--300;
-    background: $gradient-sessions-hover, url("../img/about-img.png") no-repeat center/cover;
+    box-shadow: inset 0 -7px 0 0 $strong-blue;
   }
 }

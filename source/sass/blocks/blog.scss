@@ -10,6 +10,10 @@
   width: 100%;
   margin-bottom: 75px;
   margin-top: 40px;
+
+  @media (max-width: $mobile-width) {
+    margin: 10px 0 50px;
+  }
 }
 
 .blog__item {
@@ -18,6 +22,11 @@
   padding: 46px 60px;
   margin-bottom: 45px;
   min-height: 530px;
+
+  @media (max-width: $mobile-width) {
+    padding: 20px;
+    margin-bottom: 25px;
+  }
 
   img {
     border-radius: $radius10;
@@ -44,11 +53,22 @@
     @include font-El(24, 34);
     padding-bottom: 20px;
     padding-top: 30px;
+
+    @media (max-width: $mobile-width) {
+      @include resize-txt(20, 30);
+      padding-top: 15px;
+      padding-bottom: 20px;
+    }
   }
 
   p {
     @include font(16, 22, 300);
     padding-bottom: 40px;
+
+    @media (max-width: $mobile-width) {
+      @include resize-txt(13, 20);
+      padding-bottom: 20px;
+    }
   }
 }
 
