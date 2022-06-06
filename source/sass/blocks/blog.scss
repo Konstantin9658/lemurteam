@@ -23,6 +23,11 @@
     border-radius: $radius10;
     object-fit: cover;
     object-position: -85px;
+
+    @media (max-width: $tablet-width) {
+      object-position: bottom;
+      width: 100%;
+    }
   }
 
   picture {
@@ -49,10 +54,21 @@
 
 .blog__item-wrapper {
   display: flex;
+
+  @media (max-width: $tablet-width) {
+    flex-direction: column;
+  }
 }
 
 .blog__item-content {
   width: 564px;
   min-height: 430px;
   margin-left: 50px;
+
+  @media (max-width: $tablet-width) {
+    margin-left: 0;
+    margin-top: 20px;
+    width: 100%;
+    min-height: 320px;
+  }
 }

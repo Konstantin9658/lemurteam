@@ -5,21 +5,35 @@
 .news__list {
   @include reset-list;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(416px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(352px, 1fr));
   justify-items: center;
   gap: 24px;
   margin: 40px 0 88px;
 }
 
 .news__item {
+
+  @supports not (background: $gradient-sessions, url("../img/about-img.webp") no-repeat center/cover) {
+    background: $gradient-sessions, url("../img/about-img.png") no-repeat center/cover;;
+  }
+
+  background: $gradient-sessions, url("../img/about-img.webp") no-repeat center/cover;
   display: flex;
   flex-direction: column;
-  background: $gradient-sessions, url("../img/about-img.png") no-repeat center/cover;
   border-radius: $radius10;
-  width: 416px;
+  width: 100%;
   min-height: 258px;
   padding: 30px 45px 30px 35px;
   cursor: pointer;
+
+  @include retina {
+
+    @supports not (background: $gradient-sessions, url("../img/about-img@2x.webp") no-repeat center/cover) {
+      background: $gradient-sessions, url("../img/about-img@2x.png") no-repeat center/cover;;
+    }
+
+    background: $gradient-sessions, url("../img/about-img@2x.webp") no-repeat center/cover;
+  }
 
   p {
     margin: 0;

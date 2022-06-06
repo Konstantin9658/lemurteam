@@ -12,6 +12,10 @@
   margin-top: 80px;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: $tablet-width) {
+    margin-top: 40px;
+  }
 }
 
 .feedback__item {

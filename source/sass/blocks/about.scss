@@ -7,23 +7,47 @@
   flex-direction: column;
   max-width: 1076px;
   margin: 82px auto 0;
+
+  @media (max-width: $tablet-width) {
+    margin-top: 40px;
+  }
 }
 
 .about__massage,
 .about__hydrotherapy {
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: $tablet-width) {
+    flex-direction: column;
+  }
 }
 
 .about__massage {
   margin-bottom: 100px;
   align-items: center;
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 50px;
+  }
+}
+
+.about__hydrotherapy {
+
+  @media (max-width: $tablet-width) {
+    align-items: center;
+  }
 }
 
 .about__text {
   width: 496px;
   min-height: 234px;
   padding: 40px 30px 20px 0;
+
+  @media (max-width: $tablet-width) {
+    width: 100%;
+    padding: 0;
+  }
 
   h3,
   p {
@@ -34,6 +58,10 @@
   h3 {
     @include font(24, 34, 700);
     padding-bottom: 30px;
+
+    @media (max-width: $tablet-width) {
+      text-align: center;
+    }
   }
 
   p {
@@ -44,11 +72,19 @@
 
 .about__hydrotherapy-img {
   order: -1;
+
+  @media (max-width: $tablet-width) {
+    order: 0;
+  }
 }
 
 .about__hydrotherapy .about__text {
   padding-left: 30px;
   padding-top: 17px;
+
+  @media (max-width: $tablet-width) {
+    padding-left: 0;
+  }
 
   p {
     letter-spacing: -0.6px;

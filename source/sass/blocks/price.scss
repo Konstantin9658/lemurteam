@@ -9,6 +9,11 @@
   margin: 79px auto 0;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: $tablet-width) {
+    margin-top: 50px;
+    // align-items: stretch;
+  }
 }
 
 .price__list {
@@ -34,6 +39,10 @@
 
     &:last-child {
       @include font-El(18, 25);
+
+      @media (max-width: $tablet-width) {
+        @include resize-txt(17, 22);
+      }
     }
   }
 }
@@ -45,6 +54,10 @@
   padding-right: 15px;
   display: flex;
   align-items: center;
+
+  @media (max-width: $tablet-width) {
+    @include resize-txt(15, 20);
+  }
 
   &::before {
     position: absolute;
