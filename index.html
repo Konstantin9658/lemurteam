@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RitmStyle</title>
-  <!-- <link rel="icon" href="favicon.ico">
-  <link rel="icon" href="icon.svg" type="image/svg+xml"> -->
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="preload" href="fonts/proxima-nova-semibold.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/proxima-nova-regular.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/proxima-nova-bold.woff2" as="font" crossorigin="anonymous">
@@ -22,6 +22,7 @@
       <svg class="header__logo" width="60" height="60" role="img">
         <use xlink:href="img/sprite.svg#icon-logo"></use>
       </svg>
+      <button type="button" class="button button--burger"></button>
       <nav class="header__nav nav">
         <ul class="nav__list">
           <li class="nav__item">
@@ -61,7 +62,7 @@
           </li>
         </ul>
       </nav>
-      <button class="button" data-modal="">Записаться на сеанс</button>
+      <button class="button button--order" data-modal="">Записаться на сеанс</button>
     </div>
   </header>
   <main class="main">
@@ -219,7 +220,7 @@
         </figure>
       </div>
     </section>
-    <section class="contact container" id="contact">
+    <section class="contact container" id="contacts">
       <h2 class="visually-hidden">Как нас найти?</h2>
       <div class="contact__map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4929.328600387189!2d30.36477489845928!3d59.93146684292316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469631bbed6b1eb1%3A0x324a82045cec7472!2z0J3QtdCy0YHQutC40LkgMTQwIC8gTmV2c2t5IDE0MA!5e0!3m2!1sru!2sru!4v1654350515227!5m2!1sru!2sru" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -285,11 +286,7 @@
   </footer>
   <div class="popup hide">
     <form action="https://jsonplaceholder.typicode.com/posts/" class="form" method="post">
-      <button type="button" class="button button--close" data-close="">
-        <svg width="34" height="34">
-          <use xlink:href="img/sprite.svg#icon-close"></use>
-        </svg>
-      </button>
+      <button type="button" class="button button--close" data-close=""></button>
       <div class="form__wrapper">
         <p>Заполните форму</p>
         <ul class="form__fields">

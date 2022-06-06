@@ -3,17 +3,48 @@ import Inputmask from "inputmask";
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
-  const main = document.querySelector('.main');
-  const header = document.querySelector('.header');
-  const inputName = document.querySelector('#name-field');
-  const inputEmail = document.querySelector('#email-field');
-  const inputPhone = document.querySelector('#phone-field');
-  const btnsOpenModal = document.querySelectorAll('[data-modal]');
-  const btnCloseModal = document.querySelector('[data-close]');
-  const popup = document.querySelector('.popup');
-  const form = document.querySelector('.form');
-  const validateElements = Array.from(document.querySelectorAll('[data-validate]'));
-  const btnSumbit = document.querySelector('.button--submit');
+  const main = body.querySelector('.main');
+  const header = body.querySelector('.header');
+  const burgerMenu = header.querySelector('.button--burger');
+  const menu = header.querySelector('.nav__list');
+  const menuItems = menu.querySelectorAll('.nav__item');
+  const popup = body.querySelector('.popup');
+  const form = popup.querySelector('.form');
+  const inputName = form.querySelector('#name-field');
+  const inputEmail = form.querySelector('#email-field');
+  const inputPhone = form.querySelector('#phone-field');
+  const validateElements = Array.from(form.querySelectorAll('[data-validate]'));
+  const btnSumbit = form.querySelector('.button--submit');
+  const btnsOpenModal = body.querySelectorAll('[data-modal]');
+  const btnCloseModal = popup.querySelector('[data-close]');
+
+  const KEYCODE_TAB = 9;
+
+  const trapFocus = (element) => {
+    let focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
+    let firstFocusableEl = focusableEls[0];
+    let lastFocusableEl = focusableEls[focusableEls.length - 1];
+
+    element.addEventListener('keydown', function(e) {
+      let isTabPressed = (e.key === 'Tab' || e.keyCode === KEYCODE_TAB);
+
+      if (!isTabPressed) {
+        return;
+      }
+
+      if ( e.shiftKey ) /* shift + tab */ {
+        if (document.activeElement === firstFocusableEl) {
+          lastFocusableEl.focus();
+            e.preventDefault();
+          }
+        } else /* tab */ {
+        if (document.activeElement === lastFocusableEl) {
+          firstFocusableEl.focus();
+            e.preventDefault();
+          }
+        }
+    });
+  };
 
   btnSumbit.disabled = true;
 
@@ -27,6 +58,22 @@ document.addEventListener('DOMContentLoaded', () => {
     main.classList.toggle('blur');
     header.classList.toggle('blur');
     body.classList.toggle('page__body--hidden');
+  };
+
+  const showOrHideMenu = () => {
+    if (window.innerWidth < 1024) {
+      menu.classList.toggle('nav__list--show');
+      body.classList.toggle('page__body--hidden');
+      trapFocus(menu);
+
+      if (burgerMenu.classList.contains('button--burger')) {
+        burgerMenu.classList.add('button--close');
+        burgerMenu.classList.remove('button--burger');
+      } else {
+        burgerMenu.classList.remove('button--close');
+        burgerMenu.classList.add('button--burger');
+      }
+    }
   };
 
   const closeModal = () => {
@@ -59,7 +106,12 @@ document.addEventListener('DOMContentLoaded', () => {
     slideActiveClass: 'feedback__item--active',
     freeMode: true,
     speed: 5000,
-    freeModeMomentum: false
+    freeModeMomentum: false,
+    breakpoints: {
+      320: {
+        spaceBetween: 20,
+      }
+    }
   };
 
   const validateInput = (element, example) => {
@@ -141,4 +193,6 @@ document.addEventListener('DOMContentLoaded', () => {
   new Swiper('.swiper', swiperOptions);
   btnCloseModal.addEventListener('click', closeModal);
   btnsOpenModal.forEach(btn => btn.addEventListener('click', toggler));
+  burgerMenu.addEventListener('click', showOrHideMenu);
+  menuItems.forEach(item => item.addEventListener('click', showOrHideMenu));
 });
