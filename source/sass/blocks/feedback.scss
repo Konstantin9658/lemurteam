@@ -35,8 +35,11 @@
   border-radius: $radius10;
   margin-bottom: 61px;
 
+  @media (max-width: $tablet-width) {
+    min-width: 100%;
+  }
+
   @media (max-width: $mobile-width) {
-    min-width: 300px;
     padding: 30px 15px 36px;
   }
 
@@ -70,8 +73,11 @@
   min-height: 350px;
   padding: 50px 60px 56px;
 
+  @media (max-width: $tablet-width) {
+    min-width: 100%;
+  }
+
   @media (max-width: $mobile-width) {
-    min-width: 300px;
     padding: 30px 15px 36px;
   }
 

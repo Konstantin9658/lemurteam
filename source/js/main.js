@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeModal = () => {
     if (popup.classList.contains('show')) {
       toggler();
+      form.reset();
     }
   };
 

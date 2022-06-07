@@ -8,11 +8,19 @@
     flex-direction: column;
   }
 
+  @media (max-width: $mobile-width) {
+    padding: 40px 0 45px;
+  }
+
   iframe {
     border: none;
     width: 100%;
     border-radius: $radius10;
     min-height: 604px;
+
+    @media (max-width: $mobile-width) {
+      min-height: 480px;
+    }
   }
 }
 
@@ -29,6 +37,10 @@
     margin-bottom: 20px;
     max-width: 100%;
   }
+
+  @media (max-width: $mobile-width) {
+    height: 480px;
+  }
 }
 
 .contact__boxes {
@@ -40,6 +52,10 @@
   @media (max-width: $tablet-width) {
     flex-direction: row;
     margin-left: 0;
+  }
+
+  @media (max-width: $mobile-width) {
+    flex-direction: column;
   }
 }
 
@@ -59,11 +75,21 @@
     }
   }
 
+  @media (max-width: $mobile-width) {
+    margin-bottom: 20px;
+    margin-right: 0;
+    padding: 35px 25px;
+  }
+
   h3 {
     @include font-El(24, 34);
     padding-bottom: 20px;
     margin: 0;
     color: $main-white;
+
+    @media (max-width: $mobile-width) {
+      @include resize-txt(20, 28);
+    }
   }
 }
 

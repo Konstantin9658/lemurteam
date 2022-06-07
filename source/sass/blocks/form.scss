@@ -15,11 +15,16 @@
     color: $main-white;
     margin: 0;
     padding-bottom: 20px;
+
+    @media (max-width: $mobile-width) {
+      @include resize-txt(23, 28);
+    }
   }
 }
 
 .form__wrapper {
-  width: 660px;
+  max-width: 660px;
+  width: 100%;
   margin: 0 auto;
   position: relative;
   display: flex;
@@ -29,8 +34,13 @@
 
 .form__fields {
   @include reset-list;
-  width: 391px;
+  max-width: 391px;
+  width: 100%;
   margin: 30px auto 16px;
+
+  @media (max-width: $tablet-width) {
+    padding: 0 20px;
+  }
 }
 
 .form__fields-item {

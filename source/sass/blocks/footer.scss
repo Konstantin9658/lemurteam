@@ -13,15 +13,22 @@
   display: flex;
   justify-content: space-between;
 
-  p {
-    margin: 0;
+  p,
+  a {
     color: $main-white;
     @include font(14, 19, 400);
+
+    @media (max-width: $mobile-width) {
+      @include resize-txt(12, 17);
+    }
+  }
+
+  p {
+    margin: 0;
   }
 
   a {
     @include hover;
-    color: $main-white;
-    @include font(14, 19, 700);
+    font-weight: 700;
   }
 }
