@@ -22,9 +22,9 @@
       <svg class="header__logo" width="60" height="60" role="img">
         <use xlink:href="img/sprite.svg#icon-logo"></use>
       </svg>
-      <button type="button" class="button button--burger"></button>
-      <nav class="header__nav nav">
-        <ul class="nav__list">
+      <button type="button" class="button button--burger button--nojs" data-nojs></button>
+      <nav class="header__nav nav nav--nojs" data-nojs>
+        <ul class="nav__list nav__list--nojs" data-nojs>
           <li class="nav__item">
             <a href="#">
               Главная
@@ -295,14 +295,17 @@
           <li class="form__fields-item">
             <label class="visually-hidden" for="name-field">Имя</label>
             <input type="text" name="Name" id="name-field" placeholder="Имя*" data-validate/>
+            <span>Обязательное поле</span>
           </li>
           <li class="form__fields-item">
             <label class="visually-hidden" for="phone-field">Телефон</label>
             <input type="tel" name="Phone" id="phone-field" placeholder="Телефон*" data-validate/>
+            <span>Обязательное поле</span>
           </li>
           <li class="form__fields-item">
             <label class="visually-hidden" for="email-field">Email</label>
             <input type="email" name="Email" id="email-field" placeholder="Почта*" data-validate/>
+            <span>Обязательное поле</span>
           </li>
           <li class="form__fields-item">
             <label class="visually-hidden" for="comment-field">Комментарий</label>

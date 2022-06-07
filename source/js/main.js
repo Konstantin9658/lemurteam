@@ -13,10 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const inputName = form.querySelector('#name-field');
   const inputEmail = form.querySelector('#email-field');
   const inputPhone = form.querySelector('#phone-field');
-  const validateElements = Array.from(form.querySelectorAll('[data-validate]'));
+  const validateElements = form.querySelectorAll('[data-validate]');
   const btnSumbit = form.querySelector('.button--submit');
   const btnsOpenModal = body.querySelectorAll('[data-modal]');
   const btnCloseModal = popup.querySelector('[data-close]');
+
+  // const noJsElements = document.querySelectorAll('[data-nojs]');
 
   const KEYCODE_TAB = 9;
 
@@ -46,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  btnSumbit.disabled = true;
+  // btnSumbit.disabled = true;
 
   const message = {
     success: 'Спасибо! Менеджер с Вами скоро свяжется',
@@ -83,7 +85,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  const checkValue = input => input.value !== '';
+  const checkValue = (input, classError) => {
+    if (input.value === '') {
+      input.parentElement.classList.add(classError);
+      input.focus();
+    } else {
+      input.parentElement.classList.remove(classError);
+    }
+  };
+
+  // btnSumbit.addEventListener('click', (e) => {
+
+  //   if (checkValue(inputName, 'form__fields-item--error') || checkValue(inputEmail, 'form__fields-item--error') || checkValue(inputPhone, 'form__fields-item--error')) {
+
+  //     console.log('error');
+  //   } else {
+  //     e.preventDefault();
+  //     console.log('ok');
+  //   }
+  // });
 
   const swiperOptions = {
     modules: [Pagination, Autoplay],
@@ -120,21 +140,22 @@ document.addEventListener('DOMContentLoaded', () => {
     inputPhoneMask.mask(element);
   };
 
-  form.addEventListener('input', () => {
-    validateElements.forEach(element => {
-      if (element.value === '') {
-        element.style.border = '1px solid red';
-      } else {
-        element.style.border = '';
-      }
-    });
+  // form.addEventListener('input', () => {
+  //   validateElements.forEach(element => {
+  //     if (element.value === '') {
+  //       element.style.border = '1px solid red';
+  //       errorMsg.classList.add('show');
+  //     } else {
+  //       element.style.border = '';
+  //     }
+  //   });
 
-    if (validateElements.every(checkValue)) {
-      btnSumbit.disabled = false;
-    } else {
-      btnSumbit.disabled = true;
-    }
-  });
+  //   if (validateElements.every(checkValue)) {
+  //     btnSumbit.disabled = false;
+  //   } else {
+  //     btnSumbit.disabled = true;
+  //   }
+  // });
 
   const showMessage = (message) => {
     const div = document.createElement('div');
@@ -144,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
 
     body.append(div);
-    btnSumbit.disabled = true;
+    // btnSumbit.disabled = true;
     main.classList.toggle('blur');
     header.classList.toggle('blur');
 
@@ -172,21 +193,41 @@ document.addEventListener('DOMContentLoaded', () => {
     return await result.json();
   };
 
+  validateElements.forEach(element => {
+    element.addEventListener('input', () => {
+      checkValue(element, 'form__fields-item--error');
+    });
+  });
+
   const postData = (e) => {
     e.preventDefault();
 
-    sendForm()
-    .then((res) => {
-      showMessage(message.success);
-      console.log(res);
-    })
-    .catch(() => {
-      showMessage(message.failure);
-    })
-    .finally(() => {
-      closeModal();
-      form.reset();
-    });
+    if (inputName.value === '') {
+      inputName.parentElement.classList.add('form__fields-item--error');
+      inputName.focus();
+      return;
+    } if (inputPhone.value === '') {
+      inputPhone.parentElement.classList.add('form__fields-item--error');
+      inputPhone.focus();
+      return;
+    } if (inputEmail.value === '') {
+      inputEmail.parentElement.classList.add('form__fields-item--error');
+      inputEmail.focus();
+      return;
+    } else {
+      sendForm()
+      .then((res) => {
+        showMessage(message.success);
+        console.log(res);
+      })
+      .catch(() => {
+        showMessage(message.failure);
+      })
+      .finally(() => {
+        closeModal();
+        form.reset();
+      });
+    }
   };
 
   form.addEventListener('submit', postData);

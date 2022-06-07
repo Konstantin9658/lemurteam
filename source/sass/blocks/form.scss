@@ -44,6 +44,7 @@
 }
 
 .form__fields-item {
+  position: relative;
 
   input,
   textarea {
@@ -74,6 +75,15 @@
     }
   }
 
+  span {
+    display: none;
+    color: red;
+    @include font(14, 16, 300);
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+  }
+
   input {
     min-height: 43px;
     margin-bottom: 21px;
@@ -84,5 +94,16 @@
     min-height: 120px;
     padding-top: 12px;
     padding-bottom: 20px;
+  }
+
+  &--error {
+
+    input {
+      border: 1px solid red;
+    }
+
+    span {
+      display: block;
+    }
   }
 }

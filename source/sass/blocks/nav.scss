@@ -1,6 +1,13 @@
 .nav {
   display: flex;
   position: relative;
+
+  &--nojs {
+
+    & + button {
+      margin-right: 0;
+    }
+  }
 }
 
 .nav__list {
@@ -29,6 +36,30 @@
       visibility: visible;
       width: 100%;
       height: 100%;
+    }
+
+    &--nojs {
+
+      @media (max-width: $tablet-width) {
+        position: absolute;
+        visibility: visible;
+        flex-direction: row;
+        width: 500px;
+        height: 50px;
+        left: -248px;
+        top: -25px;
+        right: 0;
+        opacity: 1;
+        background-color: transparent;
+      }
+
+      .nav__item {
+        margin-right: 20px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
     }
   }
 }
