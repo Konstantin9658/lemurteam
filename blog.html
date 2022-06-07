@@ -18,6 +18,7 @@
       <svg class="header__logo" width="60" height="60" role="img">
         <use xlink:href="img/sprite.svg#icon-logo"></use>
       </svg>
+      <button type="button" class="button button--burger"></button>
       <nav class="header__nav nav">
         <ul class="nav__list">
           <li class="nav__item">
@@ -57,7 +58,7 @@
           </li>
         </ul>
       </nav>
-      <button class="button">Записаться на сеанс</button>
+      <button class="button button--order" data-modal="">Записаться на сеанс</button>
     </div>
   </header>
   <main class="main">
@@ -107,5 +108,33 @@
       <a href="#">Сделано d-e-n.info</a>
     </div>
   </footer>
+  <div class="popup hide">
+    <form action="https://jsonplaceholder.typicode.com/posts/" class="form" method="post">
+      <button type="button" class="button button--close" data-close=""></button>
+      <div class="form__wrapper">
+        <p>Заполните форму</p>
+        <ul class="form__fields">
+          <li class="form__fields-item">
+            <label class="visually-hidden" for="name-field">Имя</label>
+            <input type="text" name="Name" id="name-field" placeholder="Имя*" data-validate="">
+          </li>
+          <li class="form__fields-item">
+            <label class="visually-hidden" for="phone-field">Телефон</label>
+            <input type="tel" name="Phone" id="phone-field" placeholder="Телефон*" data-validate="">
+          </li>
+          <li class="form__fields-item">
+            <label class="visually-hidden" for="email-field">Email</label>
+            <input type="email" name="Email" id="email-field" placeholder="Почта*" data-validate="">
+          </li>
+          <li class="form__fields-item">
+            <label class="visually-hidden" for="comment-field">Комментарий</label>
+            <textarea name="Comment" id="comment-field" placeholder="Комментарий"></textarea>
+          </li>
+        </ul>
+        <button type="submit" class="button button--submit">Отправить</button>
+      </div>
+    </form>
+  </div>
+  <script type="module" src="js/bundle.js"></script>
 </body>
 </html>
